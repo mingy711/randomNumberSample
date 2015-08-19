@@ -32,7 +32,7 @@ class AdService(implicit inj: Injector) extends Injectable {
   }
 
   def getAd(appId: String, client_timestamp: String): Future[Ad] = {
-
+/* if db is very slow, we can do it this wait to make the task more parallel
     val futureAd: Future[Option[DbAd]] = adDao.getAd(appId)
     val futFirstRandom = RandomManager.getRandom()
     val futSecondRandom = RandomManager.getRandom()
@@ -44,7 +44,7 @@ class AdService(implicit inj: Injector) extends Injectable {
     } yield {
 
     }
-
+*/
 
 
 
