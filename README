@@ -1,0 +1,11 @@
+This is your new Play application
+=================================
+
+This file will be packaged with your application, when using `activator dist`.
+
+DEBUG: activator -jvm-debug 9999 ~run
+
+UNIT TEST: activator testOnly
+
+**note**
+It needs to start a mongo server and make sure create celtra db has been created
