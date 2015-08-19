@@ -1,0 +1,9 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /:adId  @controllers.AdController.getAd(adId: String, client_timestamp: String ?= "")
+
+###############  Fix Internal server error, for (GET) [/favicon.ico] ######################
+GET        /favicon.ico                      controllers.Default.notFound
