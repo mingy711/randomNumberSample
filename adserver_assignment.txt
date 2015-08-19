@@ -1,0 +1,35 @@
+# Celtra backend programming Assignment
+
+As you will notice, not every detail is clearly defined. You have the freedom to make your own choices where you see fit. We also value questions and will gladly answer any question regarding the assignment.
+
+Please e-mail your solution within one week to apejcic@celtra.com. After we have reviewed it, we will invite you over for a chat.
+
+# Objective
+
+Create a simple HTTP endpoint that emulates an ad server. 
+
+Ad server has to:
+    - Parse requested ad id and client timestamp.
+    - Create a random session id.
+    - Make two requests to external HTTP service which responds with a random number after sleeping for 5 seconds (simulating slow call to external HTTP service).
+    - Retrieve ad name from the database.
+    - Write the requested ad id together with session id, client timestamp and two number retrieved from another service into a tracking log file (in json format).
+    - Respond by returning the ad name and random numbers from services.
+
+Additional info:
+    - Ad server should be able to process the request even if server-to-server requests fail.
+    - Ad name is immutable and can therefore be cached in ad server memory.
+    - Tracking log file is rolled every 15min with a file name "YYYY-MM-DD_HH-MM". Example:
+        - 2015-01-21_10-15
+        - 2015-01-21_10-30
+        - 2015-01-21_10-45
+    - Ad server can respond before logging is finished.
+    - Example of adserver request: adserver.com/<ad_id>?client_timestamp=1434492830
+
+Notes:
+    - Code has to be covered by tests. 
+    - Parallelize as much as possible.
+    - The choice of architecture, programming language, framework, communication protocols and formats is up to you.
+    - Build, test and start/stop scripts should be easily runnable from CLI.
+    - Finally, the application should be documented, explaining the architectural, technological and other decision you made.
+    
